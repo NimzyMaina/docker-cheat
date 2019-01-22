@@ -11,7 +11,7 @@ Run these command from a terminal. The docker commandline structure is as follow
 docker <command> <sub-command> (options)
 ```
 
- Get Docker version
+## Get Docker version
 
 To get docker version
 
@@ -20,7 +20,7 @@ root@localhost:~$ docker -v
 Docker version 18.06.1-ce, build e68fc7a
 ```
 
- Get Docker Info
+## Get Docker Info
 
 To get docker info on how it has been configured
 
@@ -29,7 +29,7 @@ root@localhost:~$ docker info
 ...
 ```
 
- Running\Starting a Container
+## Running\Starting a Container
 
 To run a container (Brand New Container)
 
