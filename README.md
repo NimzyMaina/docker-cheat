@@ -129,6 +129,12 @@ root@localhost:~$ docker container rm <container-id-or-name>
 root@localhost:~$ docker container rm <container-id-or-name> <container2-id-or-name>
 ```
 
+### Remove Dangling Images
+
+```console
+root@localhost:~$ docker rmi -f $(docker images -f dangling=true -q)
+```
+
 ## Bash Into A Running Container
 
 To bash(ssh) into a running container
