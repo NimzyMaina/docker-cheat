@@ -82,13 +82,13 @@ root@localhost:~$ docker container run -p 80:80 -it --name webhost nginx
 ### Running Containers
 
 ```console
-root@localhost:~$ docker containers ls
+root@localhost:~$ docker container ls
 ```
 
 ### All Containers
 
 ```console
-root@localhost:~$ docker containers ls -a
+root@localhost:~$ docker container ls -a
 ```
 
 ## Stop Containers
@@ -123,6 +123,14 @@ To get rid of containers. For this command you can chain the container identifie
 root@localhost:~$ docker container rm <container-id-or-name>
 ```
 
+## Remove\Delete all stopped containers
+
+To remove all stopped containers use the docker container prune command.
+
+```console
+root@localhost:~$ docker container prune
+```
+
 ### Remove\Delete multiple containers
 
 ```console
@@ -131,8 +139,24 @@ root@localhost:~$ docker container rm <container-id-or-name> <container2-id-or-n
 
 ### Remove Dangling Images
 
+A dangling image is an image that is not tagged and is not used by any container. To remove dangling images, use:
+
 ```console
 root@localhost:~$ docker rmi -f $(docker images -f dangling=true -q)
+```
+
+OR
+
+```console
+root@localhost:~$ docker image prune
+```
+
+### Remove All Unused Images
+
+To remove all images which are not referenced by any existing container, not just the dangling ones, use the prune command with the -a flag:
+
+```console
+root@localhost:~$ docker image prune -a
 ```
 
 ## Bash Into A Running Container
